@@ -53,7 +53,7 @@ def show_madlib_form():
     else:
         return render_template("goodbye.html")
 
-    #return render_template("compliment.html", gamedecision = game)
+    #return render_template("compliment.html", gamedecision = game)a
 
 
 @app.route('/madlib')
@@ -64,8 +64,14 @@ def show_madlib():
     color = request.args.get("color")
     noun = request.args.get("noun")
     adjective = request.args.get("adjective")
+    verb = request.args.get("verb")
+    emotion = request.args.get("emotion")
 
-    return render_template("madlib.html", person=person, color=color, noun=noun, adjective=adjective)
+    madlib_options = ["madlib.html", "madlib2.html", "madlib3.html", "madlib4.html"]
+
+
+    return render_template(choice(madlib_options), person=person, color=color, 
+        noun=noun, adjective=adjective, verb=verb, emotion=emotion)
 
 
 if __name__ == '__main__':
@@ -73,12 +79,3 @@ if __name__ == '__main__':
     # "reloads" our web app if we change the code.
 
     app.run(debug=True)
-
-
-# Person? <input type="text" name="firstname" value="Lame"><br>
-#         Color? <select name="color">
-#             <option value="red">red</option>
-#             <option value="yellow">yellow</option>
-#             <option value="blue">blue</option><br>
-#         Noun? <input type="text" name="noun" value="Lamp"><br>
-#         Adjective? <input type="text" name="adjective" value="breakable"><br>

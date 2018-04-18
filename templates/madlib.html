@@ -1,12 +1,27 @@
 <!doctype html>
 <html>
 <head>
+  <style type="text/css">
+        body {
+        background-image: url("../static/balloonicorn.jpg");
+        }
+
+        .boxed {
+            border: 1px solid green ;
+            background-color: DeepPink ;
+            padding: 20px 50px 20px 50px;
+            margin: 20px auto;
+            width: 500px
+        }
+
   <title>Madlib Game</title>
+  </style>
 </head>
 <body>
-    <p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
+    <div class="boxed">
+    <h3>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab.
 When {{ person }} went to pick it up, it burst into flames in a totally
-{{ adjective }} way.</p>
-
+{{ adjective }} way.</h3>
+    </div>
 </body>
 </html>
